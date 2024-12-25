@@ -4,8 +4,6 @@ import{Data} from "../ComponentData/TechnologyData"
 
 function TechnologySection() {
  
-
-  
   const [selectedTechnology, setSelectedTechnology] = useState(null);
 
   const SelectedComponent = selectedTechnology?.component;

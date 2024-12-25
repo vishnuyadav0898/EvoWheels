@@ -23,56 +23,6 @@ function EVvsICEComparison() {
   const annualSavings = monthlySavings * 12;
 
 
-  const sliderStyle = `
-  input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 80vw;
-    height: 14px;
-    background: #d9f0eb; /* Light green background */
-    border-radius: 6px;
-    outline: none;
-    cursor: pointer;
-  }
-  input[type="range"]::-webkit-slider-runnable-track {
-    background: #2f7369; /* Dark green track */
-    height: 19px;
-    border-radius: 6px;
-  }
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 28px;
-    height: 28px;
-    background: white;
-    border: 2px solid #2f7369; /* Dark green border */
-    border-radius: 50%;
-    cursor: pointer;
-    margin-top: -5px; /* Align thumb to track center */
-  }
-  input[type="range"]::-moz-range-thumb {
-    width: 28px;
-    height: 28px;
-    background: white;
-    border: 2px solid #2f7369; /* Dark green border */
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  input[type="range"]::-ms-thumb {
-    width: 28px;
-    height: 28px;
-    background: white;
-    border: 2px solid #2f7369; /* Dark green border */
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  input[type="range"]::-ms-track {
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-`;
-
 
 
   return (
