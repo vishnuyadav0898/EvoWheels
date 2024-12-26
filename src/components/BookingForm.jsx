@@ -69,20 +69,25 @@ const BookingForm = ({ product, closeBooking }) => {
   };
 
   const handleSubmit = (e) => {
-  
-    e.preventDefault();
-  
-   
-    // Save booking info to localStorage
-    const existingBookings = JSON.parse(localStorage.getItem("bookingInfo")) || [];
-    localStorage.setItem("bookingInfo", JSON.stringify([...existingBookings, userInfo]));
+    e.preventDefault(); // Prevent form submission refresh
 
-    // Show confirmation message with delivery date
+    // Calculate delivery date
     const deliveryDate = new Date();
     deliveryDate.setDate(deliveryDate.getDate() + 10);
+
+    // Update the confirmation message immediately
     setBookingConfirmed(
       `Get Your ${product.name} From Your Nearest Experience Center before ${deliveryDate.toLocaleDateString()}.`
     );
+
+    // Save booking info to localStorage after updating the state
+    setTimeout(() => {
+      const existingBookings = JSON.parse(localStorage.getItem("bookingInfo")) || [];
+      const updatedBookings = [...existingBookings, userInfo];
+
+      // Make sure the existing bookings are always saved as an array
+      localStorage.setItem("bookingInfo", JSON.stringify(updatedBookings));
+    }, 100); // Delay ensures the state update completes first
   };
 
   const clearForm = () => {
@@ -109,7 +114,7 @@ const BookingForm = ({ product, closeBooking }) => {
         <h2 className="text-3xl lg:text-5xl 2xl:text-5xl font-bold mb-4 mt-10  2xl:mt-28 lg:mt-10 mx-auto">Booking Form</h2>
 
         {/* Use InputField for all inputs */}
-        <InputField label="Name" type="text" name="name" value={userInfo.name} onChange={handleChange}   />
+        <InputField label="Name" type="text" name="name" value={userInfo.name} onChange={handleChange} />
         <InputField label="Email" type="email" name="email" value={userInfo.email} onChange={handleChange} />
         <InputField label="Phone" type="tel" name="phone" value={userInfo.phone} onChange={handleChange} />
         <InputField label="PIN" type="text" name="pin" value={userInfo.pin} onChange={handleChange} />
@@ -153,7 +158,7 @@ const BookingForm = ({ product, closeBooking }) => {
             Submit Booking
           </button>
           <BackButton onClose={closeBooking} />
-          <CommonFooter/>
+          <CommonFooter />
         </div>
       </form>
 
