@@ -44,7 +44,7 @@ function ContactusForm() {
     <div>
       {visible && (
         <div className='fixed inset-0 flex items-center justify-center z-50  bg-opacity-0 p-4'>
-          <div className='w-full sm:w-[85vw] md:w-[60vw] lg:w-[55vw] xl:w-[55vw] 2xl:w-[45vw] h-[70vh] md:h-[60vh] lg:h-[60vh] xl:h-[60vh] bg-gray-400 p-4 sm:p-8 md:p-10 lg:p-14 2xl:p-16 rounded-xl flex items-center justify-center'>
+          <div className='w-full sm:w-[85vw] md:w-[60vw] lg:w-[55vw] xl:w-[55vw] 2xl:w-[40vw] h-[70vh] md:h-[60vh] lg:h-[60vh] xl:h-[70vh] bg-gray-400 p-4 sm:p-8 md:p-10 lg:p-14 2xl:p-16 rounded-xl flex items-center justify-center'>
             <form onSubmit={handleSubmit} className='flex flex-col justify-center gap-4 w-full'>
               <label htmlFor='name'></label>
               <input

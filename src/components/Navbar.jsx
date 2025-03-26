@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import ColapsNav from './ColapsNav';
-import YourOrders from './YourOrders';
+import React, { useState, useEffect } from "react";
+import ColapsNav from "./ColapsNav";
+import YourOrders from "./YourOrders";
 
 function Navbar() {
   const [colapsnav, setcopapsnav] = useState(false); // Collapsible navigation state
   const [showNavbar, setShowNavbar] = useState(false); // Navbar visibility on scroll
   const [Yourorder, setYourorder] = useState(false); // Modal visibility state
-  const [activeNav, setActiveNav] = useState('#home'); // Active navigation state
+  const [activeNav, setActiveNav] = useState("#home"); // Active navigation state
 
   const navItems = [
     { href: "#home", label: "Home" },
@@ -30,9 +30,9 @@ function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -43,7 +43,7 @@ function Navbar() {
 
       <nav
         className={`w-full fixed top-0 left-0 z-10 flex justify-between items-center h-16 sm:h-16 md:h-20 lg:h-24 xl:h-20 2xl:h-20 bg-black text-white px-4 sm:px-6 md:px-8 transition-transform duration-300 ${
-          showNavbar ? 'translate-y-0' : '-translate-y-20'
+          showNavbar ? "translate-y-0" : "-translate-y-20"
         }`}
       >
         {/* Mobile menu toggle */}
@@ -64,9 +64,11 @@ function Navbar() {
                 href={href}
                 onClick={() => setActiveNav(href)}
                 className={`block rounded-md px-4 text-xl py-2 ${
-                  activeNav === href ? 'bg-gray-400 text-black' : 'hover:bg-gray-400'
+                  activeNav === href
+                    ? "bg-gray-400 text-black"
+                    : "hover:bg-gray-400"
                 }`}
-                aria-current={activeNav === href ? 'page' : undefined}
+                aria-current={activeNav === href ? "page" : undefined}
               >
                 {label}
               </a>
